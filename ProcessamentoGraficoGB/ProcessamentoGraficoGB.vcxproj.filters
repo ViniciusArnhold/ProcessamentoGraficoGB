@@ -14,4 +14,73 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Tilemap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Element.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tile.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="textures.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="parado_sul.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="parado_sudoeste.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="parado_sudeste.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="parado_oeste.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="parado_norte.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="parado_noroeste.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="parado_nordeste.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="parado_leste.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="parado8.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="greentile.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="explode.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dead.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cursor.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

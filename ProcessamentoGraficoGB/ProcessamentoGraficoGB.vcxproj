@@ -18,6 +18,33 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Element.h" />
+    <ClInclude Include="Image.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="Tilemap.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cursor.ptm" />
+    <None Include="dead.ptm" />
+    <None Include="explode.ptm" />
+    <None Include="greentile.ptm" />
+    <None Include="parado8.ptm" />
+    <None Include="parado_leste.ptm" />
+    <None Include="parado_nordeste.ptm" />
+    <None Include="parado_noroeste.ptm" />
+    <None Include="parado_norte.ptm" />
+    <None Include="parado_oeste.ptm" />
+    <None Include="parado_sudeste.ptm" />
+    <None Include="parado_sudoeste.ptm" />
+    <None Include="parado_sul.ptm" />
+    <None Include="textures.ptm" />
+    <None Include="tile.ptm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AC308793-E79E-47C3-8F5D-96137C0F8613}</ProjectGuid>
     <RootNamespace>ProcessamentoGraficoGB</RootNamespace>
