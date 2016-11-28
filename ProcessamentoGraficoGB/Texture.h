@@ -8,6 +8,7 @@
 #include <GL/glu.h>
 #include <GL/glut.h>
 #include "Image.h"
+#include "PTMReader.h"
 
 #define NUM_TEX 14
 
@@ -41,20 +42,35 @@ private:
 	void initTextures() {
 		Image *textures[NUM_TEX];
 		int i = 0;
-		textures[i++] = &Image("tile.ptm");
-		textures[i++] = &Image("bomb.ptm");
-		textures[i++] = &Image("chest.ptm");
-		textures[i++] = &Image("parado_norte.ptm");
-		textures[i++] = &Image("parado_sul.ptm");
-		textures[i++] = &Image("parado_leste.ptm");
-		textures[i++] = &Image("parado_oeste.ptm");
-		textures[i++] = &Image("parado_nordeste.ptm");
-		textures[i++] = &Image("parado_sudeste.ptm");
-		textures[i++] = &Image("parado_noroeste.ptm");
-		textures[i++] = &Image("parado_sudoeste.ptm");
-		textures[i++] = &Image("dead.ptm");
-		textures[i++] = &Image("cursor.ptm");
-		textures[i++] = &Image("explode.ptm");
+		PTMReader carregador = PTMReader();
+		carregador.ler("tile.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("bomb.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("chest.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("parado_norte.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("parado_sul.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("parado_leste.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("parado_oeste.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("parado_nordeste.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("parado_sudeste.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("parado_noroeste.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("parado_sudoeste.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("dead.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("cursor.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("explode.ptm");
+		textures[i++] = &carregador.getImage();
 		bindTextures(idsTiles, textures, NUM_TEX);
 	}
 
