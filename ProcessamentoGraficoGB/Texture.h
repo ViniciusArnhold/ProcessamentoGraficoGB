@@ -43,7 +43,35 @@ private:
 		Image *textures[NUM_TEX];
 		int i = 0;
 		PTMReader carregador = PTMReader();
-		carregador.ler("tile.ptm");
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\terra.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\destroy_stage.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\diamante_chegada.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\Personagem-Norte.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\Personagem-Sul.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\Personagem-Leste.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\Personagem-Oeste.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\Personagem-Nordeste.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\Personagem-Sudeste.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\Personagem-Noroeste.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\Personagem-Sudoeste.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\Personagem-Morto.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\cursor_novo.ptm");
+		textures[i++] = &carregador.getImage();
+		carregador.ler("C:\ProcessamentoGraficoGB\ProcessamentoGraficoGB\destroy_stage.ptm");
+		textures[i++] = &carregador.getImage();
+		/*carregador.ler("tile.ptm");
 		textures[i++] = &carregador.getImage();
 		carregador.ler("bomb.ptm");
 		textures[i++] = &carregador.getImage();
@@ -71,6 +99,7 @@ private:
 		textures[i++] = &carregador.getImage();
 		carregador.ler("explode.ptm");
 		textures[i++] = &carregador.getImage();
+		*/
 		bindTextures(idsTiles, textures, NUM_TEX);
 	}
 

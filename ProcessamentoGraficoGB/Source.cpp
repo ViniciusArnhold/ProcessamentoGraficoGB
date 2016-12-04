@@ -13,6 +13,7 @@
 #include "Tile.h"
 #include "Tilemap.h"
 #include "Texture.h"
+#include "PTMReader.h"
 
 
 #define gameWidth 900
