@@ -8,6 +8,8 @@
 #include <GL/glu.h>
 #include <GL/glut.h>
 #include "Image.h"
+#include "NImage.h"
+#include "NPTMReader.h"
 
 #define NUM_TEX 14
 
@@ -28,19 +30,50 @@ public:
 
 private:
 
-	void bindTextures(GLuint *ids, Image **textures, int numTextures) {
+	void bindTextures(GLuint *ids, NImage *textures, int numTextures) {
 		glGenTextures(numTextures, ids);
 		for (int i = 0; i < numTextures; i++) {
 			glBindTexture(GL_TEXTURE_2D, ids[i]);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textures[i]->getWidth(), textures[i]->getHeight(), 0, GL_BGRA_EXT, GL_UNSIGNED_BYTE, textures[i]->getPixels());
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textures[i].getWidth(), textures[i].getHeight(), 0, GL_BGRA_EXT, GL_UNSIGNED_BYTE, textures[i].getPixels());
 		}
 	}
 
 	void initTextures() {
-		Image *textures[NUM_TEX];
+		NImage textures[NUM_TEX];
 		int i = 0;
+		
+		NPTMReader carregador = NPTMReader();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\terra.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\destroy_stage.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\diamante_chegada.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\Personagem-Norte.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\Personagem-Sul.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\Personagem-Leste.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\Personagem-Oeste.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\Personagem-Nordeste.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\Personagem-Sudeste.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\Personagem-Noroeste.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\Personagem-Sudoeste.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\Personagem-Morto.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\cursor_novo.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("C:\\Users\\Administrador\\Source\\Git\\ProcessamentoGraficoGB3\\ProcessamentoGraficoGB\\destroy_stage.ptm");
+		textures[i++] = carregador.getImage();
+		/*
 		textures[i++] = &Image("tile.ptm");
 		textures[i++] = &Image("bomb.ptm");
 		textures[i++] = &Image("chest.ptm");
@@ -55,6 +88,7 @@ private:
 		textures[i++] = &Image("dead.ptm");
 		textures[i++] = &Image("cursor.ptm");
 		textures[i++] = &Image("explode.ptm");
+		*/
 		bindTextures(idsTiles, textures, NUM_TEX);
 	}
 

@@ -30,6 +30,12 @@
     <ClInclude Include="Element.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NImage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NPTMReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="tile.ptm">
@@ -123,6 +129,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NPTMReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
