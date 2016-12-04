@@ -1,10 +1,10 @@
-#ifndef Element_H
-#define Element_H
+#ifndef GameObject_H
+#define GameObject_H
 
 
-class Element {
+class GameObject {
 public:
-	Element() {
+	GameObject() {
 		texture = 5;
 	}
 

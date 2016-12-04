@@ -12,13 +12,13 @@
 
 #define NUM_TEX 15
 
-class Texture {
+class Textures{
 
 
 public:
 	void init_textures() {
 		idsTiles = new GLuint[NUM_TEX];
-		Texture::initTextures();
+		Textures::initTextures();
 
 	}
 
