@@ -3,8 +3,9 @@
 #include "Tile.h"
 #include <string>
 #include <iostream>
-#include "Element.h"
-#include "Texture.h"
+#include "GameObject.h"
+#include "Textures.h"
+
 #ifndef Tilemap_H
 #define Tilemap_H
 #define NORTH 1
@@ -19,6 +20,7 @@
 #define GAME_LOSS 1
 #define GAME_RUNNING 0
 #define INIT_NUMBER_OF_CLICKS 2
+
 GLuint BOMB_TEXTURE = 2;
 GLuint CHEST_TEXTURE = 3;
 
@@ -42,10 +44,10 @@ public:
 		outOfBounds = 0;
 	}
 	void loadCharacter() {
-		Element character();
+		GameObject character();
 	}
 	void loadExplosion() {
-		Element explosion();
+		GameObject explosion();
 	}
 
 	void drawRect(float x, float y, float w, float h){
@@ -110,7 +112,7 @@ public:
 		drawCharacter();
 		return GAME_STATE;
 	}
-	void setTextures(Texture textures) {
+	void setTextures(Textures textures) {
 		this->textures = textures;
 	}
 	void explode(){
@@ -351,7 +353,7 @@ public:
 	}
 private:
 	Tile * tiles;
-	Texture textures;
+	Textures textures;
 	int size;
 	int outOfBounds;
 	double startx;
@@ -359,8 +361,8 @@ private:
 	int gameWidth;
 	int gameHeight;
 	int numberOfClicks;
-	Element explosion;
-	Element character;
+	GameObject explosion;
+	GameObject character;
 };
 
 #endif

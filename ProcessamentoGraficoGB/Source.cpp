@@ -11,7 +11,7 @@
 #include <fstream>
 #include "Tile.h"
 #include "Tilemap.h"
-#include "Texture.h"
+#include "Textures.h"
 #include "Image.h"
 
 
@@ -36,7 +36,7 @@ int steps = 0;
 
 Image lastScreen(gameWidth, gameHeight);
 Tilemap tilemap[1];
-Texture textures;
+Textures textures;
 
 void drawTileMap();
 
@@ -119,42 +119,42 @@ void timer(int value)
 void keyboard(unsigned char key, int x, int y) {
 	if (GAME_STATE == GAME_RUNNING && animating == 0) {
 		switch (key) {
-		case '8':
+		case 'w':
 			DIRECTION = NORTH;
 			animating = 1;
 			timer(0);
 			break;
-		case '2':
+		case 'x':
 			DIRECTION = SOUTH;
 			animating = 1;
 			timer(0);
 			break;
-		case '6':
+		case 'd':
 			DIRECTION = EAST;
 			animating = 1;
 			timer(0);
 			break;
-		case '4':
+		case 'a':
 			DIRECTION = WEST;
 			animating = 1;
 			timer(0);
 			break;
-		case '9':
+		case 'e':
 			DIRECTION = NORTHEAST;
 			animating = 1;
 			timer(0);
 			break;
-		case '3':
+		case 'c':
 			DIRECTION = SOUTHEAST;
 			animating = 1;
 			timer(0);
 			break;
-		case '7':
+		case 'q':
 			DIRECTION = NORTHWEST;
 			animating = 1;
 			timer(0);
 			break;
-		case '1':
+		case 'z':
 			DIRECTION = SOUTHWEST;
 			animating = 1;
 			timer(0);
