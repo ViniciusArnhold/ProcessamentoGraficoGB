@@ -56,6 +56,7 @@
     <None Include="Personagem-Sudeste.ptm" />
     <None Include="Personagem-Sudoeste.ptm" />
     <None Include="Personagem-Sul.ptm" />
+    <None Include="terra.ptm" />
     <None Include="textures.ptm" />
     <None Include="tile.ptm" />
   </ItemGroup>
