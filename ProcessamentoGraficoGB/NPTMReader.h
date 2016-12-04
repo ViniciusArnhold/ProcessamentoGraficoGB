@@ -12,5 +12,5 @@ public:
 	NPTMReader();
 	char* nextLine();
 	NImage getImage();
-	void ler(char* caminho);
+	NImage* ler(char* caminho);
 };

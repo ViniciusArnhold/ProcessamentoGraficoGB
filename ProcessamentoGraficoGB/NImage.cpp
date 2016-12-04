@@ -6,6 +6,7 @@
 Unisinos 2016 - Vinicius Pegorini Arnhold e Reni Steffenon
 */
 #include "NImage.h"
+#include "NPTMReader.h"
 
 NImage::NImage(int largura, int altura) {
 	width = largura;
@@ -13,9 +14,15 @@ NImage::NImage(int largura, int altura) {
 	pixels = new unsigned int[width*height];
 }
 
+NImage::NImage(char* caminho) {
+	NImage* thiz = NPTMReader().ler(caminho);
+	this->height = thiz->getHeight();
+	this->width = thiz->getWidth();
+	this->pixels = thiz->getPixels();
+}
+
 NImage::NImage() {
-	width = 0;
-	height = 0;
+
 }
 
 

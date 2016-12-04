@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include "Image.h"
 #include <algorithm>
 #include "Tile.h"
 #include <string>

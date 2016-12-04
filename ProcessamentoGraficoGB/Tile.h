@@ -1,4 +1,3 @@
-#include "Image.h"
 #include <Windows.h>
 #include <stdlib.h>
 #include <stdio.h>

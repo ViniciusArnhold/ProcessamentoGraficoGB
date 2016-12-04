@@ -6,6 +6,7 @@ class NImage
 	int height = 0;
 public:
 	NImage(int w, int h);
+	NImage(char* caminho);
 	NImage();
 
 	//Core

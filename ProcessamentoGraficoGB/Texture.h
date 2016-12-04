@@ -7,7 +7,6 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
-#include "Image.h"
 #include "NImage.h"
 #include "NPTMReader.h"
 
@@ -73,22 +72,8 @@ private:
 		textures[i++] = carregador.getImage();
 		carregador.ler("destroy_stage.ptm");
 		textures[i++] = carregador.getImage();
-		/*
-		textures[i++] = &Image("tile.ptm");
-		textures[i++] = &Image("bomb.ptm");
-		textures[i++] = &Image("chest.ptm");
-		textures[i++] = &Image("parado_norte.ptm");
-		textures[i++] = &Image("parado_sul.ptm");
-		textures[i++] = &Image("parado_leste.ptm");
-		textures[i++] = &Image("parado_oeste.ptm");
-		textures[i++] = &Image("parado_nordeste.ptm");
-		textures[i++] = &Image("parado_sudeste.ptm");
-		textures[i++] = &Image("parado_noroeste.ptm");
-		textures[i++] = &Image("parado_sudoeste.ptm");
-		textures[i++] = &Image("dead.ptm");
-		textures[i++] = &Image("cursor.ptm");
-		textures[i++] = &Image("explode.ptm");
-		*/
+		
+		
 		bindTextures(idsTiles, textures, NUM_TEX);
 	}
 

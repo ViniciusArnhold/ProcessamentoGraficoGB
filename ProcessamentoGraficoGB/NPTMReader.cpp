@@ -34,9 +34,8 @@ NImage NPTMReader::getImage()
 	return img;
 }
 
-void NPTMReader::ler(char* caminho)
+NImage* NPTMReader::ler(char* caminho)
 {
-	img = NImage();
 	using namespace std;
 
 	ifstream input(caminho, std::ios::binary);
@@ -89,4 +88,5 @@ void NPTMReader::ler(char* caminho)
 
 	cout << "Arquivo " << caminho << "terminou de ser lido." << endl;
 
+	return &img;
 }

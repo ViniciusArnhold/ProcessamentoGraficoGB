@@ -9,7 +9,6 @@
 #include <string.h>
 #include <cmath>
 #include <fstream>
-#include "Image.h"
 #include "Tile.h"
 #include "Tilemap.h"
 #include "Texture.h"
