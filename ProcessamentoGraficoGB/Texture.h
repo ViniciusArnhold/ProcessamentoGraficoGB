@@ -7,8 +7,8 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
-#include "NImage.h"
-#include "NPTMReader.h"
+#include "Image.h"
+#include "PTMReader.h"
 
 #define NUM_TEX 14
 
@@ -29,7 +29,7 @@ public:
 
 private:
 
-	void bindTextures(GLuint *ids, NImage *textures, int numTextures) {
+	void bindTextures(GLuint *ids, Image *textures, int numTextures) {
 		glGenTextures(numTextures, ids);
 		for (int i = 0; i < numTextures; i++) {
 			glBindTexture(GL_TEXTURE_2D, ids[i]);
@@ -40,10 +40,10 @@ private:
 	}
 
 	void initTextures() {
-		NImage textures[NUM_TEX];
+		Image textures[NUM_TEX];
 		int i = 0;
-		
-		NPTMReader carregador = NPTMReader();
+
+		PTMReader carregador = PTMReader();
 		carregador.ler("terra.ptm");
 		textures[i++] = carregador.getImage();
 		carregador.ler("destroy_stage.ptm");

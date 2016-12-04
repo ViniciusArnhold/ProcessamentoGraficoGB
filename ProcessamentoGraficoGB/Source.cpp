@@ -12,7 +12,7 @@
 #include "Tile.h"
 #include "Tilemap.h"
 #include "Texture.h"
-#include "NImage.h"
+#include "Image.h"
 
 
 #define gameWidth 900
@@ -34,7 +34,7 @@ int animating = 0;
 int DIRECTION = 0;
 int steps = 0;
 
-NImage lastScreen(gameWidth, gameHeight);
+Image lastScreen(gameWidth, gameHeight);
 Tilemap tilemap[1];
 Texture textures;
 

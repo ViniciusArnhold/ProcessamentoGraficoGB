@@ -16,25 +16,25 @@ Unisinos 2016 - Vinicius Pegorini Arnhold e Reni Steffenon
 #include <algorithm>
 #include <vector>
 #include <iostream>
-#include "NPTMReader.h"
-#include "NImage.h"
+#include "PTMReader.h"
+#include "Image.h"
 #include <string>
 
-NPTMReader::NPTMReader() {
+PTMReader::PTMReader() {
 
 }
 
-char * NPTMReader::nextLine()
+char * PTMReader::nextLine()
 {
 	return nullptr;
 }
 
-NImage NPTMReader::getImage()
+Image PTMReader::getImage()
 {
 	return img;
 }
 
-NImage* NPTMReader::ler(char* caminho)
+Image* PTMReader::ler(char* caminho)
 {
 	using namespace std;
 
@@ -59,7 +59,7 @@ NImage* NPTMReader::ler(char* caminho)
 
 	input >> textBuffer;//Quarta linha
 
-	img = NImage(largura, altura);
+	img = Image(largura, altura);
 
 	//Binary
 	char * buffer = new char[altura*largura * 4];
@@ -86,7 +86,7 @@ NImage* NPTMReader::ler(char* caminho)
 		}
 	}
 
-	cout << "Arquivo " << caminho << "terminou de ser lido." << endl;
+	cout << "Arquivo \"" << caminho << "\" terminou de ser lido." << endl;
 
 	return &img;
 }

@@ -3,14 +3,14 @@
 #include <iterator>
 #include <algorithm>
 #include <vector>
-#include "NImage.h"
+#include "Image.h"
 
-class NPTMReader
+class PTMReader
 {
-	NImage img;
+	Image img;
 public:
-	NPTMReader();
+	PTMReader();
 	char* nextLine();
-	NImage getImage();
-	NImage* ler(char* caminho);
+	Image getImage();
+	Image* ler(char* caminho);
 };

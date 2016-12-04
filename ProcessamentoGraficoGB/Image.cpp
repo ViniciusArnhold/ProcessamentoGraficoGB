@@ -5,65 +5,65 @@
 \/    |_|  \___/ \___\___||___/___/\__,_|_| |_| |_|\___|_| |_|\__\___/  \____/|_|  \__,_|_| |_|\___\___/          \____/\_/ \_/
 Unisinos 2016 - Vinicius Pegorini Arnhold e Reni Steffenon
 */
-#include "NImage.h"
-#include "NPTMReader.h"
+#include "Image.h"
+#include "PTMReader.h"
 
-NImage::NImage(int largura, int altura) {
+Image::Image(int largura, int altura) {
 	width = largura;
 	height = altura;
 	pixels = new unsigned int[width*height];
 }
 
-NImage::NImage(char* caminho) {
-	NImage* thiz = NPTMReader().ler(caminho);
+Image::Image(char* caminho) {
+	Image* thiz = PTMReader().ler(caminho);
 	this->height = thiz->getHeight();
 	this->width = thiz->getWidth();
 	this->pixels = thiz->getPixels();
 }
 
-NImage::NImage() {
+Image::Image() {
 
 }
 
 
-void NImage::setWidth(int w) {
+void Image::setWidth(int w) {
 	width = w;
 }
 
-void NImage::setHeight(int h) {
+void Image::setHeight(int h) {
 	height = h;
 }
 
 
-void NImage::calcular() {
+void Image::calcular() {
 	pixels = new unsigned int[width*height];
 }
 
-void NImage::setPixel(int rgb, int x, int y) {
+void Image::setPixel(int rgb, int x, int y) {
 	pixels[x + y*width] = rgb;
 }
 
-int NImage::getPixel(int x, int y) {
+int Image::getPixel(int x, int y) {
 	return pixels[x + y*width];
 }
 
-void NImage::setPixel(int a, int r, int g, int b, int x, int y) {
+void Image::setPixel(int a, int r, int g, int b, int x, int y) {
 	pixels[x + y*width] = (a << 24) | (r << 16) | (g << 8) | (b);
 }
-unsigned int* NImage::getPixels() {
+unsigned int* Image::getPixels() {
 	return pixels;
 }
 
-int NImage::getWidth() {
+int Image::getWidth() {
 	return width;
 }
 
-int NImage::getHeight() {
+int Image::getHeight() {
 	return height;
 }
 
-NImage NImage::clone() {
-	NImage aux(getWidth(), getHeight());
+Image Image::clone() {
+	Image aux(getWidth(), getHeight());
 
 	for (int x = 0; x < getWidth(); x++) {
 		for (int y = 0; y < getHeight(); y++) {
@@ -74,7 +74,7 @@ NImage NImage::clone() {
 
 }
 
-void NImage::subImage(NImage *src, int startx, int starty) {
+void Image::subImage(Image *src, int startx, int starty) {
 
 	int memoryStartY = starty;
 	for (int x = 0; x < src->getWidth(); x++) {
@@ -87,7 +87,7 @@ void NImage::subImage(NImage *src, int startx, int starty) {
 	}
 }
 
-void NImage::plotInto(NImage* ref, int posicaoX, int posicaoY, char* zBuffer, char z)
+void Image::plotInto(Image* ref, int posicaoX, int posicaoY, char* zBuffer, char z)
 {
 	int xRef = 0;
 	int yRef = 0;
@@ -116,7 +116,7 @@ void NImage::plotInto(NImage* ref, int posicaoX, int posicaoY, char* zBuffer, ch
 
 }
 
-void NImage::plot(NImage* sobreposta, int posicaoX, int posicaoY) {
+void Image::plot(Image* sobreposta, int posicaoX, int posicaoY) {
 
 	int xSobreposta = 0;
 	int ySobreposta = 0;
@@ -144,7 +144,7 @@ void NImage::plot(NImage* sobreposta, int posicaoX, int posicaoY) {
 
 }
 
-int NImage::calcularPixels(int sobreposta, int fundo) {
+int Image::calcularPixels(int sobreposta, int fundo) {
 	int aSobreposta = (sobreposta >> 24) & 0xff;
 	int rSobreposta = (sobreposta >> 16) & 0xff;
 	int gSobreposta = (sobreposta >> 8) & 0xff;

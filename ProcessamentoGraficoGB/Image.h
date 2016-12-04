@@ -1,23 +1,23 @@
 #pragma once
-class NImage
+class Image
 {
 	unsigned int *pixels;
 	int width = 0;
 	int height = 0;
 public:
-	NImage(int w, int h);
-	NImage(char* caminho);
-	NImage();
+	Image(int w, int h);
+	Image(char* caminho);
+	Image();
 
 	//Core
-	void plot(NImage* sobreposta, int posicaoX, int posicaoY);
-	void subImage(NImage* dest, int startx, int starty);
-	void plotInto(NImage* sobreposta, int posicaoX, int posicaoY, char *zBuffer, char z);
+	void plot(Image* sobreposta, int posicaoX, int posicaoY);
+	void subImage(Image* dest, int startx, int starty);
+	void plotInto(Image* sobreposta, int posicaoX, int posicaoY, char *zBuffer, char z);
 
 	//Helpers
 	void calcular();
 	int calcularPixels(int sobreposta, int fundo);
-	NImage clone();
+	Image clone();
 
 	//Getters & Setters
 	int getPixel(int x, int y);

@@ -20,8 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Element.h" />
-    <ClInclude Include="NImage.h" />
-    <ClInclude Include="NPTMReader.h" />
+    <ClInclude Include="Image.h" />
+    <ClInclude Include="PTMReader.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Tilemap.h" />
@@ -60,8 +60,8 @@
     <None Include="tile.ptm" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="NImage.cpp" />
-    <ClCompile Include="NPTMReader.cpp" />
+    <ClCompile Include="Image.cpp" />
+    <ClCompile Include="PTMReader.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
