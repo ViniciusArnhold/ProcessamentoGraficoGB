@@ -77,6 +77,49 @@
     <None Include="cursor.ptm">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="packages.config" />
+    <None Include="diamante_largada.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="caminho.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="diamante_chegada.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Personagem-Leste.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Personagem-Morto.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Personagem-Nordeste.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Personagem-Noroeste.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Personagem-Norte.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Personagem-Oeste.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Personagem-Sudeste.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Personagem-Sudoeste.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Personagem-Sul.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cursor_novo.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="destroy_stage.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">

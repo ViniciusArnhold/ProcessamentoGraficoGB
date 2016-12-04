@@ -26,10 +26,16 @@
     <ClInclude Include="Tilemap.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="caminho.ptm" />
     <None Include="cursor.ptm" />
+    <None Include="cursor_novo.ptm" />
     <None Include="dead.ptm" />
+    <None Include="destroy_stage.ptm" />
+    <None Include="diamante_chegada.ptm" />
+    <None Include="diamante_largada.ptm" />
     <None Include="explode.ptm" />
     <None Include="greentile.ptm" />
+    <None Include="packages.config" />
     <None Include="parado8.ptm" />
     <None Include="parado_leste.ptm" />
     <None Include="parado_nordeste.ptm" />
@@ -39,6 +45,15 @@
     <None Include="parado_sudeste.ptm" />
     <None Include="parado_sudoeste.ptm" />
     <None Include="parado_sul.ptm" />
+    <None Include="Personagem-Leste.ptm" />
+    <None Include="Personagem-Morto.ptm" />
+    <None Include="Personagem-Nordeste.ptm" />
+    <None Include="Personagem-Noroeste.ptm" />
+    <None Include="Personagem-Norte.ptm" />
+    <None Include="Personagem-Oeste.ptm" />
+    <None Include="Personagem-Sudeste.ptm" />
+    <None Include="Personagem-Sudoeste.ptm" />
+    <None Include="Personagem-Sul.ptm" />
     <None Include="textures.ptm" />
     <None Include="tile.ptm" />
   </ItemGroup>
@@ -138,5 +153,14 @@
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets" Condition="Exists('..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" />
+    <Import Project="..\packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets" Condition="Exists('..\packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets'))" />
+  </Target>
 </Project>
