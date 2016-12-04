@@ -10,7 +10,7 @@
 #include "Image.h"
 #include "PTMReader.h"
 
-#define NUM_TEX 14
+#define NUM_TEX 15
 
 class Texture {
 
@@ -71,6 +71,8 @@ private:
 		carregador.ler("cursor_novo.ptm");
 		textures[i++] = carregador.getImage();
 		carregador.ler("destroy_stage.ptm");
+		textures[i++] = carregador.getImage();
+		carregador.ler("caminho.ptm");
 		textures[i++] = carregador.getImage();
 		
 		
