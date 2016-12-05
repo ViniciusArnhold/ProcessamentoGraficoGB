@@ -27,25 +27,13 @@
     <ClInclude Include="Tilemap.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="caminho.ptm" />
-    <None Include="cursor.ptm" />
-    <None Include="cursor_novo.ptm" />
-    <None Include="dead.ptm" />
-    <None Include="destroy_stage.ptm" />
-    <None Include="diamante_chegada.ptm" />
-    <None Include="diamante_largada.ptm" />
-    <None Include="explode.ptm" />
-    <None Include="greentile.ptm" />
+    <None Include="Bomba.ptm" />
+    <None Include="Caminho-Pedra.ptm" />
+    <None Include="Cursor.ptm" />
+    <None Include="Destruicao.ptm" />
+    <None Include="Caminho-Chegada.ptm" />
+    <None Include="Caminho-Largada.ptm" />
     <None Include="packages.config" />
-    <None Include="parado8.ptm" />
-    <None Include="parado_leste.ptm" />
-    <None Include="parado_nordeste.ptm" />
-    <None Include="parado_noroeste.ptm" />
-    <None Include="parado_norte.ptm" />
-    <None Include="parado_oeste.ptm" />
-    <None Include="parado_sudeste.ptm" />
-    <None Include="parado_sudoeste.ptm" />
-    <None Include="parado_sul.ptm" />
     <None Include="Personagem-Leste.ptm" />
     <None Include="Personagem-Morto.ptm" />
     <None Include="Personagem-Nordeste.ptm" />
@@ -55,9 +43,7 @@
     <None Include="Personagem-Sudeste.ptm" />
     <None Include="Personagem-Sudoeste.ptm" />
     <None Include="Personagem-Sul.ptm" />
-    <None Include="terra.ptm" />
-    <None Include="textures.ptm" />
-    <None Include="tile.ptm" />
+    <None Include="Caminho-Terra.ptm" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Image.cpp" />

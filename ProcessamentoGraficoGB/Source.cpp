@@ -118,6 +118,7 @@ void timer(int value)
 
 void keyboard(unsigned char key, int x, int y) {
 	if (GAME_STATE == GAME_RUNNING && animating == 0) {
+		key=tolower(key);
 		switch (key) {
 		case 'w':
 			DIRECTION = NORTH;

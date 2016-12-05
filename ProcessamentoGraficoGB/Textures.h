@@ -22,10 +22,13 @@ public:
 
 	}
 
-	GLuint *getIds() {
+	GLuint *getAllTextures() {
 		return idsTiles;
 	}
 
+	GLuint getById(int id) {
+		return idsTiles[id];
+	}
 
 private:
 
@@ -44,11 +47,11 @@ private:
 		int i = 0;
 
 		PTMReader carregador = PTMReader();
-		carregador.ler("terra.ptm");
+		carregador.ler("Caminho-Terra.ptm");
 		textures[i++] = carregador.getImage();
-		carregador.ler("destroy_stage.ptm");
+		carregador.ler("Bomba.ptm");
 		textures[i++] = carregador.getImage();
-		carregador.ler("diamante_chegada.ptm");
+		carregador.ler("Caminho-Chegada.ptm");
 		textures[i++] = carregador.getImage();
 		carregador.ler("Personagem-Norte.ptm");
 		textures[i++] = carregador.getImage();
@@ -68,13 +71,13 @@ private:
 		textures[i++] = carregador.getImage();
 		carregador.ler("Personagem-Morto.ptm");
 		textures[i++] = carregador.getImage();
-		carregador.ler("cursor_novo.ptm");
+		carregador.ler("Cursor.ptm");
 		textures[i++] = carregador.getImage();
-		carregador.ler("destroy_stage.ptm");
+		carregador.ler("Destruicao.ptm");
 		textures[i++] = carregador.getImage();
-		carregador.ler("caminho.ptm");
+		carregador.ler("Caminho-Pedra.ptm");
 		textures[i++] = carregador.getImage();
-		carregador.ler("diamante_largada.ptm");
+		carregador.ler("Caminho-Largada.ptm");
 		textures[i++] = carregador.getImage();
 		
 		

@@ -35,61 +35,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="tile.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="textures.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="parado_sul.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="parado_sudoeste.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="parado_sudeste.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="parado_oeste.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="parado_norte.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="parado_noroeste.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="parado_nordeste.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="parado_leste.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="parado8.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="greentile.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="explode.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="dead.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="cursor.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="packages.config" />
-    <None Include="diamante_largada.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="caminho.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="diamante_chegada.ptm">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="Personagem-Leste.ptm">
       <Filter>Resource Files</Filter>
     </None>
@@ -117,13 +63,25 @@
     <None Include="Personagem-Sul.ptm">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="cursor_novo.ptm">
+    <None Include="Caminho-Pedra.ptm">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="destroy_stage.ptm">
+    <None Include="Caminho-Terra.ptm">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="terra.ptm">
+    <None Include="Destruicao.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Cursor.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Caminho-Largada.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Caminho-Chegada.ptm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Bomba.ptm">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

@@ -5,6 +5,8 @@
 #include <iostream>
 #include "GameObject.h"
 #include "Textures.h"
+#include <chrono>
+#include <thread>
 
 #ifndef Tilemap_H
 #define Tilemap_H
@@ -20,7 +22,6 @@
 #define GAME_LOSS 1
 #define GAME_RUNNING 0
 #define INIT_NUMBER_OF_CLICKS 2
-
 
 GLuint BOMB_TEXTURE = 2;
 GLuint CHEST_TEXTURE = 3;
@@ -40,6 +41,7 @@ public:
 		this->gameHeight = gameHeight;
 		loadCharacter();
 		loadExplosion();
+		firstRun = true;
 		explosion.setState(1);
 		numberOfClicks = INIT_NUMBER_OF_CLICKS;
 		outOfBounds = 0;
@@ -94,18 +96,18 @@ public:
 				}
 				else {
 					if (i == 8 && j == 0) {
-						glBindTexture(GL_TEXTURE_2D, textures.getIds()[15]);
+						glBindTexture(GL_TEXTURE_2D, textures.getAllTextures()[15]);
 					}
 					else {
 						if (i == 0 && j == 8) {
-							glBindTexture(GL_TEXTURE_2D, textures.getIds()[2]);
+							glBindTexture(GL_TEXTURE_2D, textures.getAllTextures()[2]);
 						}
 						else {
 							if ((i < 8 && j == 0) || (i == 0 && j < 8) || (i == 8 && j > 0) || (i < 8 && j == 3) || (i < 8 && j == 5) || (i == 5 && j < 9) || (i == 2 && j < 9) || (i > 0 && j == 8)) {
-								glBindTexture(GL_TEXTURE_2D, textures.getIds()[14]);
+								glBindTexture(GL_TEXTURE_2D, textures.getAllTextures()[14]);
 							}
 							else {
-								glBindTexture(GL_TEXTURE_2D, textures.getIds()[0]);
+								glBindTexture(GL_TEXTURE_2D, textures.getAllTextures()[0]);
 							}
 						}
 					}
@@ -115,6 +117,10 @@ public:
 				glEnd();
 				cont++;
 			}
+		}
+		if (firstRun) {
+			showBombs();
+			firstRun = false;
 		}
 		if (tiles[tileSelected].getTextura() == BOMB_TEXTURE) {
 			character.setTexture(12);
@@ -173,30 +179,30 @@ public:
 
 	void setTiles(float w, float h) {
 		for (int i = 0; i < size; i++) {
-			GLuint *a = textures.getIds();
+			GLuint *a = textures.getAllTextures();
 			if ((i<10)||(i==12)||(i==14)||(i>=17&&i<28)||(i==30)||(i==32)||(i>=35&&i<37)||(i==39)||(i==41)||(i>=44&&i<55)||(i==57)||(i==59)||(i>=62&&i<64)||
 				(i==66)||(i==68)||(i>=71&&i<82)){
 				if (i == 8) {
-					Tile tile(w, h, textures.getIds()[2]);
+					Tile tile(w, h, textures.getAllTextures()[2]);
 					tiles[i] = tile;
 				}
 				else {
-					Tile tile(w, h, textures.getIds()[0]);
+					Tile tile(w, h, textures.getAllTextures()[0]);
 					tiles[i] = tile;
 				}
 			}
 			else {
-				Tile tile(w, h, textures.getIds()[1]);
+				Tile tile(w, h, textures.getAllTextures()[1]);
 				tiles[i] = tile;
 			}
 			
 		}
 		setToCenterTile();
 		setTreasure();
-		tiles[size / 2].setTexture(textures.getIds()[0]);
+		tiles[size / 2].setTexture(textures.getAllTextures()[0]);
 	}
 	void setTreasure() {
-		tiles[8].setTexture(textures.getIds()[2]);
+		tiles[8].setTexture(textures.getAllTextures()[2]);
 	}
 	void setToCenterTile() {
 		tileSelectedX = size / 2;
@@ -257,9 +263,9 @@ public:
 		}
 		return 0;
 	}
-	int tilewalk(int DIRECTION, int firstPassing) {
+	int tilewalk(int direction, int firstPassing) {
 		if (firstPassing == 1) {
-			if ((wouldGoOutOfBounds(DIRECTION)) == 1) {
+			if ((wouldGoOutOfBounds(direction)) == 1) {
 				outOfBounds = 1;
 				return outOfBounds;
 			}
@@ -269,7 +275,7 @@ public:
 			int h = tiles[0].getHeight();
 			int newTileX = 0;
 			int newTileY = 0;
-			switch (DIRECTION) {
+			switch (direction) {
 			case NORTH:
 				newTileY = tileSelectedY - h / 5;
 				newTileX = tileSelectedX;
@@ -375,9 +381,23 @@ public:
 		}
 		else {
 			return tilenumber;
-			printf("posição X: %d  Y: %d", smapx, smapy);
 		}
 	}
+	void showBombs() {
+		for (int i = 0; i < 81; i++) {
+			std::cout << i << " "<< tiles[i].getTextura() << std::endl;
+			if (tiles[i].getTextura() == BOMB_TEXTURE) {
+				//.tiles[i].setTexture(textures.getById(1));
+			}
+		}
+		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+		for (int i = 0; i < 81; i++) {
+			if (tiles[i].getTextura() == 1) {
+				//tiles[i].setTexture(textures.getById(BOMB_TEXTURE));
+			}
+		}
+	}
+
 private:
 	Tile * tiles;
 	Textures textures;
@@ -390,6 +410,7 @@ private:
 	int numberOfClicks;
 	GameObject explosion;
 	GameObject character;
+	boolean firstRun;
 };
 
 #endif
