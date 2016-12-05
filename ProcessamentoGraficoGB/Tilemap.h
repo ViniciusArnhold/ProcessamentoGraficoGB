@@ -196,13 +196,7 @@ public:
 		tiles[size / 2].setTexture(textures.getIds()[0]);
 	}
 	void setTreasure() {
-		/*int tilenumber;
-		do {
-			tilenumber = rand() % size;
-		} while (tilenumber == size / 2);
-		tiles[rand() % size].setTexture(textures.getIds()[2]);
-		*/
-
+		tiles[8].setTexture(textures.getIds()[2]);
 	}
 	void setToCenterTile() {
 		tileSelectedX = size / 2;
@@ -327,7 +321,9 @@ public:
 				numberOfClicks = INIT_NUMBER_OF_CLICKS;
 			}
 			tiles[tileSelected].setVisited();
-			tiles[tileSelected].setVisible();
+			//tiles[tileSelected].setVisible();
+
+			std::cout << tileSelected << std::endl;
 			return outOfBounds;
 		}
 	}
