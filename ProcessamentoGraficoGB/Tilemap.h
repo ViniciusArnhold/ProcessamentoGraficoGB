@@ -174,8 +174,15 @@ public:
 	void setTiles(float w, float h) {
 		for (int i = 0; i < size; i++) {
 			GLuint *a = textures.getIds();
-			Tile tile(w, h, textures.getIds()[rand() % 2]);
-			tiles[i] = tile;
+			if (i>-1){
+				Tile tile(w, h, textures.getIds()[0]);
+				tiles[i] = tile;
+			}
+			else {
+				Tile tile(w, h, textures.getIds()[1]);
+				tiles[i] = tile;
+			}
+			
 		}
 		setToCenterTile();
 		setTreasure();
