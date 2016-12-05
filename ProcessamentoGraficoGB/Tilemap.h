@@ -92,7 +92,22 @@ public:
 					glBindTexture(GL_TEXTURE_2D, getTile(cont).getTextura());
 				}
 				else {
-					glBindTexture(GL_TEXTURE_2D, textures.getIds()[0]);
+					if (i == 8 && j==0) {
+						glBindTexture(GL_TEXTURE_2D, textures.getIds()[15]);
+					}
+					else {
+						if (i == 0 && j == 8) {
+							glBindTexture(GL_TEXTURE_2D, textures.getIds()[2]);
+						}
+						else {
+							if ((i < 8 && j == 0)|| (i == 0 && j<8) || (i==8 && j>0) || (i<8 && j==3) || (i<8 && j == 5) || (i==5 && j<9) || (i == 2 && j<9) || (i>0 && j==8)) {
+								glBindTexture(GL_TEXTURE_2D, textures.getIds()[14]);
+							}
+							else {
+									glBindTexture(GL_TEXTURE_2D, textures.getIds()[0]);
+							}
+						}
+					}
 				}
 				glBegin(GL_QUADS);
 				drawTile(screenx + tilew / 2, screeny, tilew, tileh);
