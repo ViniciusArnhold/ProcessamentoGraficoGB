@@ -174,9 +174,16 @@ public:
 	void setTiles(float w, float h) {
 		for (int i = 0; i < size; i++) {
 			GLuint *a = textures.getIds();
-			if (i>-1){
-				Tile tile(w, h, textures.getIds()[0]);
-				tiles[i] = tile;
+			if ((i<10)||(i==12)||(i==14)||(i>=17&&i<28)||(i==30)||(i==32)||(i>=35&&i<37)||(i==39)||(i==41)||(i>=44&&i<55)||(i==57)||(i==59)||(i>=62&&i<64)||
+				(i==66)||(i==68)||(i>=71&&i<82)){
+				if (i == 8) {
+					Tile tile(w, h, textures.getIds()[2]);
+					tiles[i] = tile;
+				}
+				else {
+					Tile tile(w, h, textures.getIds()[0]);
+					tiles[i] = tile;
+				}
 			}
 			else {
 				Tile tile(w, h, textures.getIds()[1]);
@@ -189,11 +196,12 @@ public:
 		tiles[size / 2].setTexture(textures.getIds()[0]);
 	}
 	void setTreasure() {
-		int tilenumber;
+		/*int tilenumber;
 		do {
 			tilenumber = rand() % size;
 		} while (tilenumber == size / 2);
 		tiles[rand() % size].setTexture(textures.getIds()[2]);
+		*/
 
 	}
 	void setToCenterTile() {
