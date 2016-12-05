@@ -21,6 +21,7 @@
 #define GAME_RUNNING 0
 #define INIT_NUMBER_OF_CLICKS 2
 
+
 GLuint BOMB_TEXTURE = 2;
 GLuint CHEST_TEXTURE = 3;
 
@@ -50,7 +51,7 @@ public:
 		GameObject explosion();
 	}
 
-	void drawRect(float x, float y, float w, float h){
+	void drawRect(float x, float y, float w, float h) {
 		glTexCoord2f(0, 0);
 		glVertex2d(x, y);
 		glTexCoord2f(0, 1);
@@ -92,7 +93,7 @@ public:
 					glBindTexture(GL_TEXTURE_2D, getTile(cont).getTextura());
 				}
 				else {
-					if (i == 8 && j==0) {
+					if (i == 8 && j == 0) {
 						glBindTexture(GL_TEXTURE_2D, textures.getIds()[15]);
 					}
 					else {
@@ -100,11 +101,11 @@ public:
 							glBindTexture(GL_TEXTURE_2D, textures.getIds()[2]);
 						}
 						else {
-							if ((i < 8 && j == 0)|| (i == 0 && j<8) || (i==8 && j>0) || (i<8 && j==3) || (i<8 && j == 5) || (i==5 && j<9) || (i == 2 && j<9) || (i>0 && j==8)) {
+							if ((i < 8 && j == 0) || (i == 0 && j < 8) || (i == 8 && j > 0) || (i < 8 && j == 3) || (i < 8 && j == 5) || (i == 5 && j < 9) || (i == 2 && j < 9) || (i > 0 && j == 8)) {
 								glBindTexture(GL_TEXTURE_2D, textures.getIds()[14]);
 							}
 							else {
-									glBindTexture(GL_TEXTURE_2D, textures.getIds()[0]);
+								glBindTexture(GL_TEXTURE_2D, textures.getIds()[0]);
 							}
 						}
 					}
@@ -130,7 +131,7 @@ public:
 	void setTextures(Textures textures) {
 		this->textures = textures;
 	}
-	void explode(){
+	void explode() {
 
 		int state = explosion.getState();
 		if (state > 15) {
@@ -173,7 +174,7 @@ public:
 	void setTiles(float w, float h) {
 		for (int i = 0; i < size; i++) {
 			GLuint *a = textures.getIds();
-			Tile tile(w, h, textures.getIds()[rand()%2]);
+			Tile tile(w, h, textures.getIds()[rand() % 2]);
 			tiles[i] = tile;
 		}
 		setToCenterTile();
@@ -186,19 +187,19 @@ public:
 			tilenumber = rand() % size;
 		} while (tilenumber == size / 2);
 		tiles[rand() % size].setTexture(textures.getIds()[2]);
-	
+
 	}
 	void setToCenterTile() {
-		tileSelectedX = tiles[0].getWidth() * (sqrt(size) / 2);
+		tileSelectedX = size / 2;
 		tileSelectedY = tiles[0].getHeight() * (sqrt(size) / 2);
 		tileSelected = size / 2;
 		tiles[size / 2].setVisited();
 	}
 
-	void drawCharacter(){
+	void drawCharacter() {
 		glBindTexture(GL_TEXTURE_2D, character.getTexture());
 		glBegin(GL_QUADS);
-		drawRect(tileSelectedX - 30, starty - tileSelectedY - tiles[0].getHeight()/2, 60,120);
+		drawRect(tileSelectedX - 30, starty - tileSelectedY - tiles[0].getHeight() / 2, 60, 120);
 		glEnd();
 	}
 	int wouldGoOutOfBounds(int DIRECTION) {
@@ -207,42 +208,42 @@ public:
 		double newTileX = 0;
 		double newTileY = 0;
 		switch (DIRECTION) {
-			
+
 		case NORTH:
-			newTileY = tileSelectedY - h ;
+			newTileY = tileSelectedY - h;
 			newTileX = tileSelectedX;
 			break;
 		case SOUTH:
 			newTileX = tileSelectedX;
-			newTileY = tileSelectedY + h ;
+			newTileY = tileSelectedY + h;
 			break;
 		case EAST:
-			newTileX = tileSelectedX + w ;
+			newTileX = tileSelectedX + w;
 			newTileY = tileSelectedY;
 			break;
 		case WEST:
-			newTileX = tileSelectedX - w ;
+			newTileX = tileSelectedX - w;
 			newTileY = tileSelectedY;
 			break;
 		case NORTHEAST:
-			newTileX = tileSelectedX + (w / 2) ;
-			newTileY = tileSelectedY - (h / 2) ;
+			newTileX = tileSelectedX + (w / 2);
+			newTileY = tileSelectedY - (h / 2);
 			break;
 		case SOUTHEAST:
-			newTileX = tileSelectedX + (w / 2) ;
-			newTileY = tileSelectedY + (h / 2) ;
+			newTileX = tileSelectedX + (w / 2);
+			newTileY = tileSelectedY + (h / 2);
 			break;
 		case NORTHWEST:
-			newTileX = tileSelectedX - (w / 2) ;
-			newTileY = tileSelectedY - (h / 2) ;
+			newTileX = tileSelectedX - (w / 2);
+			newTileY = tileSelectedY - (h / 2);
 			break;
 		case SOUTHWEST:
-			newTileX = tileSelectedX - (w / 2) ;
-			newTileY = tileSelectedY + (h / 2) ;
+			newTileX = tileSelectedX - (w / 2);
+			newTileY = tileSelectedY + (h / 2);
 			break;
 		}
 		int tilenumber = whatTileIs(newTileX, newTileY);
-		if (tilenumber == -1) {	
+		if (tilenumber == -1) {
 			return 1;
 		}
 		return 0;
@@ -318,7 +319,7 @@ public:
 	int getSize() {
 		return size;
 	}
-	
+
 	void selectTile(int x, int y) {
 		int tilenumber = whatTileIs(x, y);
 		if (tilenumber != -1) {
@@ -329,19 +330,19 @@ public:
 	}
 
 	void mouseMap(int x, int y) {
-		if (numberOfClicks > 0){
+		if (numberOfClicks > 0) {
 			int tilenumber = whatTileIs(x, y);
-		if (tilenumber != -1) {
-			tiles[tilenumber].setVisible();
+			if (tilenumber != -1) {
+				tiles[tilenumber].setVisible();
+			}
+			numberOfClicks--;
 		}
-		numberOfClicks--;
-	}		
 	}
 	void drawCursors() {
 		for (int i = 1; i <= numberOfClicks; i++) {
 			glBindTexture(GL_TEXTURE_2D, 13);
 			glBegin(GL_QUADS);
-			drawRect(30*i, 0, 30, 45);
+			drawRect(30 * i, 0, 30, 45);
 			glEnd();
 		}
 	}
